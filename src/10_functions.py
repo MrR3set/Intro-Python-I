@@ -3,8 +3,9 @@
 # YOUR CODE HERE
 
 # Read a number from the keyboard
+
 # num = input("Enter a number: ")
-num = 11
+num = 12
 num = int(num)
 
 # Print out "Even!" if the number is even. Otherwise print "Odd"
