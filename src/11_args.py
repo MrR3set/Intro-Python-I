@@ -5,12 +5,22 @@
 # the sum. This is what you'd consider to be a regular, normal function.
 
 # YOUR CODE HERE
+def f1(x,y): return x+y
 
 print(f1(1, 2))
 
 # Write a function f2 that takes any number of integer arguments and returns the
 # sum.
 # Note: Google for "python arbitrary arguments" and look for "*args"
+def f2(*argv):
+    x = 0
+    for arg in argv:
+        if type(arg) is int:
+            x=x+int(arg)
+        else:
+            x = "NaN"
+    return x
+
 
 # YOUR CODE HERE
 
@@ -30,6 +40,11 @@ print(f2(a))    # Should print 22
 # Note: Google "python default arguments" for a hint.
 
 # YOUR CODE HERE
+def f3(num, num2=1):
+    if type(num) is int:
+        return num+num2
+
+
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
@@ -44,12 +59,22 @@ print(f3(8))     # Should print 9
 # Note: Google "python keyword arguments".
 
 # YOUR CODE HERE
+def f4(*positional,**kwargs):
+    
+    if positional:
+        for k,v in positional[0].items():
+            print(f"key:{k}, value:{v}")
+
+
+    for k,v in kwargs.items():
+        print(f"key:{k}, value:{v}")
+    
 
 # Should print
 # key: a, value: 12
 # key: b, value: 30
 f4(a=12, b=30)
-
+ 
 # Should print
 # key: city, value: Berkeley
 # key: population, value: 121240
